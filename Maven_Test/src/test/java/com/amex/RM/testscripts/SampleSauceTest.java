@@ -6,6 +6,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -41,12 +44,17 @@ public class SampleSauceTest {
  
     driver.get("https://saucelabs.com/test/guinea-pig");
     System.out.println("title of page is: " + driver.getTitle());
-    write_intoExcel(driver.getTitle());
+    write_intoExcel(0, driver.getTitle());
+    
+    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    Date date = new Date();
+    
+    write_intoExcel(1, dateFormat.format(date));
  
     driver.quit();
   }
   
-  public static void write_intoExcel(String values)
+  public static void write_intoExcel(int rowno, String values)
 			throws Exception {
 		try {
 			String filepath = System.getProperty("user.dir")+"//Results//Data.xlsx";
@@ -55,7 +63,7 @@ public class SampleSauceTest {
 			FileOutputStream outFile1 = new FileOutputStream(new File(filepath));
 			XSSFSheet sheet = wb.getSheetAt(0);
 			Row row;
-			row = sheet.createRow(0);
+			row = sheet.createRow(rowno);
 			// Style the cell with borders all around.
 			CellStyle style = wb.createCellStyle();
 			style.setBorderBottom(CellStyle.BORDER_THIN);
