@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="com.amex.RM.testscripts.SampleSauceTest" duration-ms="7270" started-at="2016-12-17T03:39:22Z" finished-at="2016-12-17T03:39:29Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="7270" started-at="2016-12-17T03:39:22Z" finished-at="2016-12-17T03:39:29Z">
+      <class name="com.amex.RM.testscripts.SampleSauceTest">
+        <test-method status="PASS" signature="testjenkins()[pri:0, instance:com.amex.RM.testscripts.SampleSauceTest@3fb6a447]" name="testjenkins" duration-ms="7251" started-at="2016-12-16T20:39:22Z" finished-at="2016-12-16T20:39:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testjenkins -->
+      </class> <!-- com.amex.RM.testscripts.SampleSauceTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- com.amex.RM.testscripts.SampleSauceTest -->
+</testng-results>
